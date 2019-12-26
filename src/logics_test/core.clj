@@ -14,15 +14,16 @@
       (== q true))
 ;;=> (true)
 
-
-
 ; (defn -main
 ;   "I don't do a whole lot ... yet."
 ;   [& args]
 ;   (println "Hello, World!"))
 
-; An introduction to Logic Programming with core.logic - Singapore Clojure Meetup
-; 1. родственные связи:
+
+
+;;; An introduction to Logic Programming with core.logic - Singapore Clojure Meetup
+
+;; 1. родственные связи:
 
 (db-rel parent x y)
 
@@ -102,6 +103,66 @@
   )
 ;; Как бы напрашивается БД!
 
-; 2. родственные связи:
 
 
+;; 2. списки
+
+(comment
+  (run* [q]
+        (membero q [1 2 3])
+        (membero q [3 4 2 0])
+        )
+  ; => (2 3)
+  )
+
+(defne membero
+  "A relation where l is a collection, such that l contains x."
+  [x l]
+  ([_ [x . tail]])
+  ([_ [head . tail]]
+   (membero x tail)))
+
+; непонятно!
+(defne appendo
+  "A relation where x, y and z are proper collections,
+such that z is x appended to y"
+  [x y z]
+  ([() _ y])
+  ([[a . d] _ [a . r]] (appendo d y r)))
+
+(comment
+  (run* [q]
+        (appendo [1 2] [3 4] q)
+        )
+  ; => ((1 2 3 4)) 
+  )
+
+(comment
+  (run* [q]
+        (appendo [1 2] q [1 2 3 4] ))
+  ; => ((3 4))
+  )
+
+(comment
+  (run* [q]
+        (appendo [1 2] [3 4] [1 2 3 4]))
+  ; => (_0)
+  )
+
+(comment
+  (run* [q]
+        (appendo (range 1000) q (range 1002)))
+  ; => ((1000 1001))
+  )
+
+(comment
+  (run* [q]
+        (appendo (range 1002) q (range 100)))
+  ; => ()
+  )
+
+
+
+;; 3. Zebra?!
+
+; TODO https://youtu.be/lzCIyvFgUVk?t=1450
