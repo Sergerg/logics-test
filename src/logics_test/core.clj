@@ -21,7 +21,8 @@
 ;   [& args]
 ;   (println "Hello, World!"))
 
-; родственные связи:
+; An introduction to Logic Programming with core.logic - Singapore Clojure Meetup
+; 1. родственные связи:
 
 (db-rel parent x y)
 
@@ -100,3 +101,7 @@
   ; => (:SUSAN)
   )
 ;; Как бы напрашивается БД!
+
+; 2. родственные связи:
+
+
