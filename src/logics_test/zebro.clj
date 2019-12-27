@@ -34,9 +34,14 @@
                     (membero [_ 'kools _ _ 'yellow] hs)
                     (membero ['spaniard _ _ 'dog _] hs)
                     (membero [_ _ 'coffee _ 'green] hs)
-                    (membero []))))
+                    (membero ['ukrainian _ 'tea _ _] hs)
+                    (membero [_ 'lucky-strikes 'oj _ _] hs)
+                    (membero ['japanese 'parliaments _ _ _] hs)
+                    (membero [_ 'oldgolds _ 'snails _] hs)
+                    (nexto [_ _ _ 'horse _] [_ 'kools _ _ _] hs)
+                    (nexto [_ _ _ 'fox _] [_ 'chesterfields _ _ _] hs))))
 
 (comment
-  (run l [q] (zebrao q))
+  (run 1 [q] (zebrao q))
   )
 
