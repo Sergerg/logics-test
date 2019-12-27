@@ -115,6 +115,7 @@
   ; => (2 3)
   )
 
+;; ????????????
 (defne membero
   "A relation where l is a collection, such that l contains x."
   [x l]
@@ -122,6 +123,7 @@
   ([_ [head . tail]]
    (membero x tail)))
 
+;; ????????????
 ; непонятно!
 (defne appendo
   "A relation where x, y and z are proper collections,
@@ -162,7 +164,3 @@ such that z is x appended to y"
   )
 
 
-
-;; 3. Zebra?!
-
-; TODO https://youtu.be/lzCIyvFgUVk?t=1450
